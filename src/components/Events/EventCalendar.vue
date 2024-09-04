@@ -2,10 +2,17 @@
   <div class="mainLayout">
     <h2>CALENDAR</h2>
     <vue-cal
-      style="height: 250px;"
+      class="vuecal--green-theme"
+      v-model="view"
       :events="events"
-      :time="false"
+      :time="true"
+      default-view="month"
+      :views="['month', 'week', 'day']"
       :on-event-click="showEventPopup"
+      :time-from="8 * 60"
+      :time-to="19 * 60"
+      :time-step="30"
+      hide-weekends
     />
     <EventPopup v-if="showPopup" :events="selectedEvents" @close="showPopup = false" />
   </div>
@@ -13,8 +20,8 @@
 
 <script>
 import VueCal from 'vue-cal';
-import 'vue-cal/dist/vuecal.css'; // Import the styles
-import EventPopup from './EventPopup.vue'; // Pop-up component
+import 'vue-cal/dist/vuecal.css';
+import EventPopup from './EventPopup.vue';
 
 export default {
   name: 'EventCalendar',
@@ -24,6 +31,7 @@ export default {
   },
   data() {
     return {
+      view: 'month',
       events: [
         { start: '2024-09-10', end: '2024-09-10', title: 'Event 1' },
         { start: '2024-09-10', end: '2024-09-10', title: 'Event 2' },
@@ -49,15 +57,17 @@ export default {
 
 <style scoped>
 .mainLayout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  flex-direction: column;
   padding: 20px;
-  height: 250px;
-}
-
-.calendar{
-  height: 250px;
+  margin-bottom: 20px;
 }
 
 h2 {
   font-weight: bold;
+  text-align: center;
 }
 </style>
