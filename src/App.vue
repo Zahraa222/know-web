@@ -1,6 +1,5 @@
 <template>
-  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-  <EventsPage msg="Welcome to Your Vue.js App"/>
+  <EventsPage />
 </template>
 
 <script>

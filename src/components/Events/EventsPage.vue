@@ -1,3 +1,5 @@
+Written by Zahraa Alhmood
+This component is used to display the Various events available in both calendar and list format.
 <template>
     <div id="app">
         <NavBar />

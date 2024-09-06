@@ -1,3 +1,7 @@
+Written by Zahraa Alhmood
+This component is used to display a popup with the events for a specific date.
+The component receives the events array as a prop and displays the events in a list.
+The component emits a close event when the close button is clicked to close the popup.
 <template>
     <div class="popup-overlay" @click.self="closePopup">
       <div class="popup-content">
