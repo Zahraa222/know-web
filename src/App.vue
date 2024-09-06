@@ -1,4 +1,3 @@
-<!--This is the Home page-->
 <template>
   <div id="app">
     <NavBar />

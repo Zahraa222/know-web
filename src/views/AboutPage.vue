@@ -51,6 +51,7 @@
         </p>
 
         <!-- Button to check programs -->
+         <!-- Note to self: Must fix the navigation for the button-->
         <button class="button" @click="handleClick">
           Check out our programs
         </button>
@@ -88,7 +89,7 @@ export default {
 </script>
 
 <style>
-/* Sets a vertical layout for About Page */
+/* Sets a vertical layout for the About Page */
 #about {
   display: flex;
   flex-direction: column;

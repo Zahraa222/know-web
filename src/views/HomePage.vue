@@ -1,12 +1,16 @@
+<!--This is the Home page-->
 <template>
   <div id="home">
     <NavBar />
 
     <div class="main-section">
+
+      <!-- Logo Section -->
       <div class="logo-section">
         <img src="@/assets/logo.png" alt="KNOW Logo" />
       </div>
 
+       <!-- Description of the organization -->
       <p class="description">
         KNOW is a nonprofit organization dedicated to empowering immigrants and
         first-generation youth by guiding them through the abundance of
@@ -16,13 +20,20 @@
         mission is to ensure that every individual, regardless of their
         background, has access to the knowledge and tools they need to thrive.
       </p>
-
+      
+      <!-- EIN Section -->
+      <!-- Update the EIN if the organization's number changes -->
       <p class="ein">EIN: 93-2768709</p>
 
+      <!-- Quote and Picture Section -->
       <div class="quote-picture-container">
+        <!-- Quote Section -->
+        <!-- Update the quote here if the wording changes in the future -->
         <h2 class="quote-section">
           LEVELING THE PLAYING <br />FIELD FOR EVERYONE
         </h2>
+        <!-- Picture Section -->
+        <!-- Replace the image by updating the source of the image below -->
         <div class="picture-section">
           <img src="@/assets/img1.png" alt="pic1" />
         </div>
