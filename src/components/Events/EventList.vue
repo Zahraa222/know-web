@@ -15,6 +15,7 @@
     },
     data() {
       return {
+        // Sample events, Add your own events here
         events: [
           { id: 1, title: 'Info about the event...', link: '#register' },
           { id: 2, title: 'Info about the event...', link: '#register' }

@@ -1,10 +1,19 @@
+Written by Zahraa Alhmood
+Main component that displays the calendar and the events. 
+It uses the vue-cal package to display the calendar and the events. The events are hardcoded in the data section of the component. 
+The component also includes a child component called EventPopup.vue that is displayed when an event is clicked. 
+The component has a method called showEventPopup that is called when an event is clicked. 
+The method filters the events array to get the selected event and then sets the selectedEvents array to the selected event. 
+The showPopup variable is set to true to display the EventPopup.vue component.
+Package: vue-cal
 <template>
   <div class="mainLayout">
     <h2>CALENDAR</h2>
     <vue-cal
       class="vuecal--green-theme"
+      style="width: 600px;"
       v-model="view"
-      :events="events"
+      :events="CalendarEvents"
       :time="true"
       default-view="month"
       :views="['month', 'week', 'day']"
@@ -32,15 +41,19 @@ export default {
   data() {
     return {
       view: 'month',
+      //Sample events, Add your own events here
       events: [
-        { start: '2024-09-10', end: '2024-09-10', title: 'Event 1' },
-        { start: '2024-09-10', end: '2024-09-10', title: 'Event 2' },
-        { start: '2024-09-15', end: '2024-09-15', title: 'Event 3' },
-        { start: '2024-09-15', end: '2024-09-15', title: 'Event 4' },
-        { start: '2024-09-20', end: '2024-09-20', title: 'Event 5' },
-        { start: '2024-09-20', end: '2024-09-20', title: 'Event 6' },
-        { start: '2024-09-25', end: '2024-09-25', title: 'Event 7' },
-        { start: '2024-09-25', end: '2024-09-25', title: 'Event 8' },
+        { start: '2024-09-10 12:00', end: '2024-09-10 13:00', title: 'About us', content: 'Join us for an introduction of our mission and who we are!'},
+        { start: '2024-09-10 15:30', end: '2024-09-10 17:30', title: 'Programs', content: 'Dive into the different fields you can pursue by learning about available programs', split: 2 },
+        { start: '2024-09-13 08:00', end: '2024-09-13 10:00', title: 'Community retreat', content: 'Meet fellow members and make connections!'},
+        { start: '2024-09-13 16:45', end: '2024-09-13 18:45', title: 'Job Board 101', content: 'Learn about job board tips and tricks!'},
+        { start: '2024-09-20 09:00', end: '2024-09-20 11:30', title: 'Applicaitons: an Overview', content: 'Learn about how to stand out in applications'},
+        { start: '2024-09-25 12:00', end: '2024-09-25 13:00', title: 'Lunch', content: 'Enjoy various meals!'},
+        { start: '2024-09-25 15:30', end: '2024-09-25 17:30', title: 'Interviews', content: 'Learn about how to prepare for interviews'},
+        { start: '2024-09-30 08:00', end: '2024-09-30 10:00', title: 'Networking', content: 'Learn about how to network effectively'},
+        { start: '2024-09-30 16:45', end: '2024-09-30 18:45', title: 'Resume Workshop', content: 'Learn about how to create a standout resume'},
+        { start: '2024-09-30 19:00', end: '2024-09-30 20:00', title: 'Closing Ceremony', content: 'Join us for the closing ceremony of the month!'},
+        { start: '2024-09-30 20:00', end: '2024-09-30 21:00', title: 'After Party', content: 'Join us for the after party!'},
       ],
       selectedEvents: [],
       showPopup: false,
@@ -48,14 +61,25 @@ export default {
   },
   methods: {
     showEventPopup(event) {
-      this.selectedEvents = this.events.filter(e => e.start === event.start);
+      this.selectedEvents = this.events.filter(e => 
+        new Date(e.start).getTime() === new Date(event.start).getTime()
+      );
       this.showPopup = true;
     },
   },
+  computed: {
+      CalendarEvents() {
+      return this.events.map(({ start, end, title }) => ({
+        start,
+        end,
+        title, // Only pass title to the calendar
+      }));
+    }
+  }
 };
 </script>
 
-<style scoped>
+<style>
 .mainLayout {
   display: flex;
   justify-content: center;
@@ -70,4 +94,21 @@ h2 {
   font-weight: bold;
   text-align: center;
 }
+
+.vuecal__event  {
+  min-width: 0;
+  padding: 0;
+  margin-top: 4px;
+  color: #fff;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  background-color: #42b983;
+
+}
+
+.vuecal--green-theme .vuecal__cell--selected .vuecal__cell-events-count {
+  background-color: #fff;
+}
+
 </style>
