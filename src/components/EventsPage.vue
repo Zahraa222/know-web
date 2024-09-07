@@ -2,21 +2,18 @@ Written by Zahraa Alhmood
 This component is used to display the Various events available in both calendar and list format.
 <template>
     <div id="app">
-        <NavBar />
         <EventList />
         <EventCalendar />
     </div>
 </template>
 
 <script>
-    import NavBar from '../NavBar';
-    import EventList from './EventList.vue';
-    import EventCalendar from './EventCalendar.vue';
+    import EventList from './Events/EventList.vue';
+    import EventCalendar from './Events/EventCalendar.vue';
 
     export default {
     name: 'App',
     components: {
-        NavBar,
         EventList,
         EventCalendar
     }

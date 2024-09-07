@@ -11,7 +11,7 @@ Package: vue-cal
     <h2>CALENDAR</h2>
     <vue-cal
       class="vuecal--green-theme"
-      style="width: 600px;"
+      style="width: 75%;"
       v-model="view"
       :events="CalendarEvents"
       :time="true"
