@@ -7,6 +7,7 @@ import HomePage from "./components/HomePage.vue";
 import AboutPage from "./components/AboutPage.vue";
 import ResourcesPage from "./components/ResourcesPage.vue";
 import EventsPage from "./components/EventsPage.vue";
+import AdvisorsPage from "./components/AdvisorsPage.vue"
 
 // Define the routes array
 // Each route object in this array represents a path in the website
@@ -35,6 +36,13 @@ const routes = [
     path:"/events",
     name: "EventsPage",
     component: EventsPage,
+  },
+
+  //Route for the Advisors page ('/advisors')
+  {
+    path:"/advisors",
+    name: "AdvisorsPage",
+    component: AdvisorsPage,
   }
 ];
 
