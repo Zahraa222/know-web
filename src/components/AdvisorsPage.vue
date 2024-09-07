@@ -1,3 +1,9 @@
+Written by Zahraa Alhmood
+This component is used to display a list of advisors with their details.
+The component uses a grid layout to display the advisor cards.
+Each advisor card contains the advisor's name and image.
+When an advisor card is clicked, a popup is displayed with the advisor's details.
+The component uses hardcoded data for the advisors, add/edit more advisors as needed.
 <template>
     <div class="advisors-page">
       <h2>Our Advisors</h2>

@@ -7,7 +7,8 @@ import HomePage from "./components/HomePage.vue";
 import AboutPage from "./components/AboutPage.vue";
 import ResourcesPage from "./components/ResourcesPage.vue";
 import EventsPage from "./components/EventsPage.vue";
-import AdvisorsPage from "./components/AdvisorsPage.vue"
+import AdvisorsPage from "./components/AdvisorsPage.vue";
+import NewsletterPage from "./components/NewsletterPage.vue";
 
 // Define the routes array
 // Each route object in this array represents a path in the website
@@ -43,7 +44,14 @@ const routes = [
     path:"/advisors",
     name: "AdvisorsPage",
     component: AdvisorsPage,
-  }
+  },
+
+  //Route for the Newsletter page ('/newsletter')
+  {
+    path:"/newsletter",
+    name: "NewsletterPage",
+    component: NewsletterPage,
+  },
 ];
 
 const router = createRouter({
