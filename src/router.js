@@ -3,9 +3,10 @@ import { createRouter, createWebHistory } from "vue-router";
 
 // Import the views (pages) for the router to connect to
 // These components represent different pages in your website
-import HomePage from "./views/HomePage.vue";
-import AboutPage from "./views/AboutPage.vue";
-import ResourcesPage from "./views/ResourcesPage.vue";
+import HomePage from "./components/HomePage.vue";
+import AboutPage from "./components/AboutPage.vue";
+import ResourcesPage from "./components/ResourcesPage.vue";
+import EventsPage from "./components/EventsPage.vue";
 
 // Define the routes array
 // Each route object in this array represents a path in the website
@@ -29,7 +30,12 @@ const routes = [
     component: ResourcesPage,
   },
 
-  // Add future routes here for other pages if needed
+  // Route for the Events page ('/events')
+  {
+    path:"/events",
+    name: "EventsPage",
+    component: EventsPage,
+  }
 ];
 
 const router = createRouter({
