@@ -1,29 +1,23 @@
 # know-web
 
-## Project setup
+## Project Setup
 
-```
-npm install
-```
+### Install Vue.js
 
-### Compiles and hot-reloads for development
+    First, ensure that Vue.js is installed by running the following command in the project directory:
+        ```npm install```
 
-```
-npm run serve
-```
+### Install Vue Router
 
-### Compiles and minifies for production
+    For routing between different pages in the project, install Vue Router:
+        ```npm install vue-router```
 
-```
-npm run build
-```
+### Install vue-cal
 
-### Lints and fixes files
+    To display the calendar and manage events, you'll need to install the vue-cal package:
+        ```npm install vue-cal```
 
-```
-npm run lint
-```
+### Run the Project
 
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
+    To start the development server and hot-reload the application, use the following command:
+        ```npm run serve```
