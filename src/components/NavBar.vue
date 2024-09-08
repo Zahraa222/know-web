@@ -10,10 +10,16 @@
       <li><router-link to="/newsletter">NEWSLETTER</router-link></li>
       <li><router-link to="/contact">CONTACT</router-link></li>
     </ul>
+
     <!-- Search bar-->
     <div class="search-container">
-      <input type="search" placeholder="Search" />
-      <i class="search-icon"></i>
+      <input
+        type="search"
+        v-model="searchQuery"
+        @keyup.enter="navigate"
+        placeholder="Search"
+      />
+      <i class="search-icon" @click="navigate"></i>
     </div>
   </nav>
 </template>
@@ -21,6 +27,35 @@
 <script>
 export default {
   name: "NavBar",
+  data() {
+    return {
+      searchQuery: "",
+    };
+  },
+  methods: {
+    navigate() {
+      
+      // Map the search query to a route name
+      const routes = {
+        home: "/",
+        about: "/about",
+        events: "/events",
+        resources: "/resources",
+        advisors: "/advisors",
+        newsletter: "/newsletter",
+        // Add a route for contact
+      };
+
+      const route = routes[this.searchQuery.toLowerCase()];
+
+      if (route) {
+        // Navigate to the matched route
+        this.$router.push(route);
+      } else {
+        alert("Page not found");
+      }
+    },
+  },
 };
 </script>
 
