@@ -1,3 +1,4 @@
+Written by Zaynab Mourtada
 <!--This is the Home page-->
 <template>
   <div id="home">

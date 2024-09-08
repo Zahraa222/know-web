@@ -1,3 +1,4 @@
+Written by Zaynab Mourtada
 <!--This is the About page-->
 <template>
   <div id="about">
